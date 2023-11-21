@@ -54,13 +54,27 @@ Type 2 MAC-IP Advertisement Routes
 
 ## L2 EVPN MAC Table
 
-A:leaf1# show network-instance mac_vrf_1 bridge-table mac-table all
-+--------------------+-------------------------------------- ----------------+--------
-|      Address       |                     Destination                      | Dest Index    |      Type      | Active  | Aging  |  Last Update            |
-+====================+======================================================+=========
-| 00:00:00:00:00:01  | ethernet-1/36.300                                     | 7            | learnt         | true    | 263    | 2021-05-04T13:56:25.000Z                             | 00:00:00:00:00:02  | vxlan-interface:vxlan1.1 vtep:192.0.2.4 vni:1         | 718427846823 | evpn           | true    | N/A    | 2021-05-04T13:43:48.000Z
-| 00:00:00:00:00:03  | vxlan-interface:vxlan1.1 vtep:192.0.2.5 vni:1         | 718427846825 | evpn           | true    | N/A    | 2021-05-04T14:04:39.000Z
-+--------+------------------+---------+-------------------+------------+-----------+--
+A:leaf1# show network-instance mac-vrf1 bridge-table mac-table all
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Mac-table of network instance mac-vrf1
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
++--------------------+-----------------------------------------------+------------+---------------+---------+--------+-----------------------------------------------+
+|      Address       |                  Destination                  | Dest Index |     Type      | Active  | Aging  |                  Last Update                  |
++====================+===============================================+============+===============+=========+========+===============================================+
+| AA:C1:AB:59:45:7E  | vxlan-interface:vxlan1.100 vtep:10.1.1.2      | 14554970   | evpn          | true    | N/A    | 2023-11-21T20:56:30.000Z                      |
+|                    | vni:100                                       |            |               |         |        |                                               |
+| AA:C1:AB:BE:95:56  | ethernet-1/2.0                                | 8          | learnt        | true    | 67     | 2023-11-21T20:56:22.000Z                      |
++--------------------+-----------------------------------------------+------------+---------------+---------+--------+-----------------------------------------------+
+Total Irb Macs                 :    0 Total    0 Active
+Total Static Macs              :    0 Total    0 Active
+Total Duplicate Macs           :    0 Total    0 Active
+Total Learnt Macs              :    1 Total    1 Active
+Total Evpn Macs                :    1 Total    1 Active
+Total Evpn static Macs         :    0 Total    0 Active
+Total Irb anycast Macs         :    0 Total    0 Active
+Total Proxy Antispoof Macs     :    0 Total    0 Active
+Total Reserved Macs            :    0 Total    0 Active
+Total Eth-cfm Macs             :    0 Total    0 Active
 
 ## L3 EVPN-VxLAN Asymmetric
 
